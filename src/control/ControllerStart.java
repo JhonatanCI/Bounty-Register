@@ -37,13 +37,25 @@ public class ControllerStart {
     }
 
     @FXML
-    void showBalance(ActionEvent event) {
-
+    void showBalance(ActionEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Balance.fxml"));
+		loader.setController(new BalanceController());
+		Parent parent = (Parent) loader.load();
+		Scene scene = new Scene(parent);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
     }
 
     @FXML
-    void showTable(ActionEvent event) {
-
+    void showTable(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Table.fxml"));
+		loader.setController(new ControllerTable());
+		Parent parent = (Parent) loader.load();
+		Scene scene = new Scene(parent);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
     }
     
     public void callRegister(int n) throws IOException {
