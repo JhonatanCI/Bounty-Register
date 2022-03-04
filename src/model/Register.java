@@ -1,16 +1,24 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Register {
 	public int money;
 	public String description;
 	public Date date;
+	SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 	
-	public Register(int money, String description, Date date) {
+	public Register(int money, String description, String date) {
 		this.money = money;
 		this.description = description;
-		this.date = date;
+		try {
+			this.date = sdf.parse(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public int getMoney() {
@@ -29,7 +37,12 @@ public class Register {
 		this.description = description;
 	}
 
-	public Date getDate() {
+	public String getDate() {
+		String todayS = sdf.format(date);
+		return todayS;
+	}
+	
+	public Date getDateOb() {
 		return date;
 	}
 

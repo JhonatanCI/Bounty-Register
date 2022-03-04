@@ -1,9 +1,6 @@
 package control;
 
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -51,15 +48,7 @@ public class ControllerRegisterMoney implements Initializable{
     	if(n>0) {
     		money *= -1;
     	}
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-		Date date = new Date();
-		try {
-			date = sdf.parse(dayTF.getText()+"-"+monthTF.getText()+"-"+yearTF.getText());
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Total.regis.add(new Register(money,description.getText(),date));
+		Total.regis.add(new Register(money,description.getText(),dayTF.getText()+"-"+monthTF.getText()+"-"+yearTF.getText()));
 		close();
     }
 	

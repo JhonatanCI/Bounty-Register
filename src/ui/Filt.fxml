@@ -20,6 +20,5 @@
       </TableView>
       <Button fx:id="returnBut" layoutX="43.0" layoutY="355.0" mnemonicParsing="false" onAction="#Return" text="Return" />
       <Label fx:id="totalLab" layoutX="456.0" layoutY="360.0" text="Total: " />
-      <Button fx:id="filtBut" layoutX="538.0" layoutY="23.0" mnemonicParsing="false" onAction="#Filt" text="Filtrar" />
    </children>
 </AnchorPane>

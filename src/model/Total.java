@@ -5,9 +5,8 @@ import javafx.collections.ObservableList;
 
 public class Total {
 	public static ObservableList<Register> regis = FXCollections.observableArrayList();
-	public int total = calculateTotal();
 	
-	public int calculateTotal() {
+	public static int calculateTotal() {
 		int sum = 0;
 		for (Register i : regis) {
 			sum+=i.getMoney();

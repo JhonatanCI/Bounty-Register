@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,9 +19,6 @@ public class ControllerStart {
     private Button tableBut;
 
     @FXML
-    private Button balanceBut;
-
-    @FXML
     private MenuItem addBut;
 
     @FXML
@@ -34,17 +32,6 @@ public class ControllerStart {
     @FXML
     void removeMoney(ActionEvent event) throws IOException {
     	callRegister(1);
-    }
-
-    @FXML
-    void showBalance(ActionEvent event) throws IOException{
-    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Balance.fxml"));
-		loader.setController(new BalanceController());
-		Parent parent = (Parent) loader.load();
-		Scene scene = new Scene(parent);
-		Stage stage = new Stage();
-		stage.setScene(scene);
-		stage.show();
     }
 
     @FXML
